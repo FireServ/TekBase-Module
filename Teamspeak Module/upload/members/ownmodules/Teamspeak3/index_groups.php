@@ -30,8 +30,7 @@
 						<form name="form_one" action="members.php?op=membersVoicesmore&ids='.$options['id'].'&voice=Teamspeak3&mod=groups" method="post">
 							<div class="dataspace"></div>
 							<input type="hidden" name="reset">
-							<input type="checkbox" name="confirm" id="confirm" class="check">
-							<label for="confirm" class="checkLabel"><div class="checkBox">Ich bin mir darüber bewusst, dass dieser Vorgang alle Gruppen und Rechte zurücksetzt und, ohne Backup, nicht rückgängig gemacht werden kann.</div></label>
+							<label for="confirm" class="checkLabel"><input type="checkbox" name="confirm" id="confirm" class="check"><div class="checkBox"><div class="checkText">Ich bin mir darüber bewusst, dass dieser Vorgang alle Gruppen und Rechte zurücksetzt und, ohne Backup, nicht rückgängig gemacht werden kann.</div></div></label>
 							<div class="dataspace"></div>
 							<div class="dataspace"></div>
 							<a href="javascript:document.form_one.submit();" class="button_form">Rechte und Gruppen zurücksetzen</a>
@@ -52,13 +51,11 @@
 						<form name="form_one" action="members.php?op=membersVoicesmore&ids='.$options['id'].'&voice=Teamspeak3&mod=groups" method="post">
 							<div class="dataspace"></div>
 							<input type="hidden" name="gdel">
-								<input type="checkbox" name="empty" id="empty" class="check">
-								<label for="empty" class="checkLabel"><div class="checkBox">Gruppe löschen, auch wenn Clients in der Gruppe sind.</div></label>
+								<label for="empty" class="checkLabel"><input type="checkbox" name="empty" id="empty" class="check"><div class="checkBox"><div class="checkText">Gruppe löschen, auch wenn Clients in der Gruppe sind.</div></div></label>
 							
 							<div class="dataspace"></div>
 							<input type="hidden" name="gid" value="'.$_GET['gid'].'">
-							<input type="checkbox" name="confirm" id="confirm" class="check">
-							<label for="confirm" class="checkLabel"><div class="checkBox">Ich bin mir darüber bewusst, dass dieser Vorgang alle Gruppen und Rechte zurücksetzt und, ohne Backup, nicht rückgängig gemacht werden kann.</div></label>
+							<label for="confirm" class="checkLabel"><input type="checkbox" name="confirm" id="confirm" class="check"><div class="checkBox"><div class="checkText">Ich bin mir darüber bewusst, dass dieser Vorgang alle Gruppen und Rechte zurücksetzt und, ohne Backup, nicht rückgängig gemacht werden kann.</div></div></label>
 							<div class="dataspace"></div>
 							<div class="dataspace"></div>
 							<a href="javascript:document.form_one.submit();" class="button_form">Gruppe löschen</a>
@@ -131,18 +128,37 @@
 		
 		echo '<style>
 					.check {
-						height:0px;
-						width:0px;
-						visibility: hidden;
+						height: 0;
+						width: 0;
 					}
 					.checkBox {
-						padding:8px;border:1px solid #56E459;font-size:11px;background-color:#CEFFCC;background-repeat:repeat-x;-moz-box-shadow: 0px 5px 7px -7px #000000;-webkit-box-shadow: 0px 5px 7px -7px #000000;box-shadow: 0px 5px 7px -7px #000000;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;width:250px;
+						padding:8px;
+						padding-left:8px;
+						border:1px solid #56E459;
+						font-size:11px;
+						background-color:#CEFFCC;
+						background-repeat:no-repeat;
+						-moz-box-shadow: 0px 5px 7px -7px #000000;
+						-webkit-box-shadow: 0px 5px 7px -7px #000000;
+						box-shadow: 0px 5px 7px -7px #000000;
+						-moz-border-radius: 4px;
+						-webkit-border-radius: 4px;
+						border-radius: 4px;width:250px;
+						background: url("members/iconsets/clean/error.png") no-repeat;
+						background-position: left center;
+						background-origin: content-box;
 					}
 					.checkBox:hover{
 						cursor: pointer;
 					}
-					.check:checked + .checkLabel {
+					.checkText{
+						padding-left:20px;
+					}
+					.check:checked + .checkBox {
 						font-weight: bold;
+						background: url("members/iconsets/clean/ok.png") no-repeat;
+						background-position: left center;
+						background-origin: content-box;
 					}
 				</style>';
 		
